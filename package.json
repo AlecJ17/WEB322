@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "tw:build": "tailwindcss build -i ./public/css/tailwind.css -o ./public/css/main.css",
+    "build": "npm run tw:build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
