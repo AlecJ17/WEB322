@@ -18,7 +18,7 @@ const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
 
 // Serve static files from 'public' directory
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Route for the home page
 app.get('/', (req, res) => {
@@ -45,7 +45,6 @@ app.get("/lego/sets", async (req, res) => {
     }
 });
 
-// Dynamic route for fetching LEGO sets by set number
 app.get("/lego/sets/:num", async (req, res) => {
     try {
         let set = await legoData.getSetByNum(req.params.num);
